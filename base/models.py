@@ -43,7 +43,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         max_length=50, null=True, verbose_name="Никнейм", unique=True)
     email = models.EmailField(null=True, unique=True)
     bio = models.TextField(null=True, blank=True)
-    start_date = models.DateTimeField(auto_now_add=True)
+    
     avatar = models.ImageField(null=True, default="avatar.svg", blank=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)

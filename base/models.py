@@ -8,7 +8,6 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 
 
-
 class CustomUserManager(BaseUserManager):
 
     def create_superuser(self, email, username, first_name, bio, password, **other_fields):
@@ -18,7 +17,7 @@ class CustomUserManager(BaseUserManager):
 
         if other_fields.get('is_staff') is not True:
             raise ValueError("Superuser must be assigned staff to True")
-        
+
         if other_fields.get('is_superuser') is not True:
             raise ValueError("Superuser must be assigned superuser to True")
 
@@ -31,20 +30,20 @@ class CustomUserManager(BaseUserManager):
 
         email = self.normalize_email(email)
         user = self.model(email=email, username=username, first_name=first_name, bio=bio,
-                           **other_fields)
+                          **other_fields)
         user.set_password(password)
         user.save()
         return user
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    first_name = models.CharField(max_length=100, null=True, verbose_name="Имя")
-    last_name = models.CharField(max_length=100, null=True, verbose_name="Фамилия")
+    first_name = models.CharField(
+        max_length=100, null=True, verbose_name="Имя")
     username = models.CharField(
         max_length=50, null=True, verbose_name="Никнейм", unique=True)
     email = models.EmailField(null=True, unique=True)
     bio = models.TextField(null=True, blank=True)
-    
+
     avatar = models.ImageField(null=True, default="avatar.svg", blank=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
@@ -52,7 +51,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = CustomUserManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['first_name','username','bio']
+    REQUIRED_FIELDS = ['first_name', 'username', 'bio']
 
     def __str__(self):
         return self.username

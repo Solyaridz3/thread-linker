@@ -46,7 +46,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     
     avatar = models.ImageField(null=True, default="avatar.svg", blank=True)
     is_staff = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
 
     objects = CustomUserManager()
 

@@ -17,7 +17,7 @@
             </div>
           </div>
           <div class="profile__info">
-            <h3>{{user.name}}</h3>
+            <h3>{{user.first_name}}</h3>
             <p>@{{user.username}}</p>
             {% if request.user == user %}
             <a href="{% url 'update-user' %}" class="btn btn--main btn--pill">Edit Profile</a>
@@ -33,7 +33,7 @@
 
         <div class="roomList__header">
           <div>
-            <h2>Треды созданы {{user.name}}</a>
+            <h2>Треды созданы {{user.first_name}}</a>
             </h2>
           </div>
         </div>

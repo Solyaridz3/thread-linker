@@ -79,7 +79,8 @@
               <div class="avatar avatar--small">
                 <img src="{{room.host.avatar.url}}" />
               </div>
-              <span>@{{room.host.name}}</span>
+              <span>@{{room.host.username}}</span>
+              
             </a>
           </div>
           <div class="room__details">
@@ -97,7 +98,7 @@
                     <div class="avatar avatar--small">
                       <img src="{{message.user.avatar.url}}" />
                     </div>
-                    <span>@{{message.user.name}}</span>
+                    <span>@{{message.user.username}}</span>
                   </a>
                   <span class="thread__date">{{message.created|timesince}} ago</span>
                 </div>
@@ -150,7 +151,7 @@
             <img src="{{user.avatar.url}}" />
           </div>
           <p>
-            {{user.username}}
+            {{user.first_name}}
             <span>@{{user.username}}</span>
           </p>
         </a>

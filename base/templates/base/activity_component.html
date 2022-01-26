@@ -28,7 +28,7 @@
         {% endif %}
       </div>
       <div class="activities__boxContent">
-        <p>написал под тредом <br>“<a href="{% url 'room' message.room.id %}">{{message.room}}</a>”</p>
+        <p>написал под тредом <br><a href="{% url 'room' message.room.id %}">{{message.room}}</a></p>
         <div class="activities__boxRoomContent">
             {{message|truncatechars:50}}
         </div>

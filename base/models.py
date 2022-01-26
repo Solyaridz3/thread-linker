@@ -44,7 +44,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(null=True, unique=True)
     bio = models.TextField(null=True, blank=True)
 
-    avatar = models.ImageField(null=True, default="avatar.svg", blank=True)
+    avatar = models.ImageField(null=True, default="avatar-default-icon_t7p54m", blank=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
 

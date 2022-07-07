@@ -1,4 +1,4 @@
-"# thread-linker" 
+# thread-linker
 
 Social Media Website written in Django.
 

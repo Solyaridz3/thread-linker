@@ -1,7 +1,6 @@
 # thread-linker
 
 Social Media Website written in Django.
-[You can check it here](https://thread-linker.herokuapp.com/)
 
 ## HTML and CSS styles have been downloaded from the internet and and were changed by me instead of creating templates from scratch 
 

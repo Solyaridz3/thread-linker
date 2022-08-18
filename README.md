@@ -2,8 +2,6 @@
 
 Social Media Website written in Django.
 
-## HTML and CSS styles have been downloaded from the internet and and were changed by me instead of creating templates from scratch 
-
 #### Setup
 
 1. install python-3.10.0
